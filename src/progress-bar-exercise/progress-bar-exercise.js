@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button, LinearProgress } from '@mui/material'
+import { Box, Button, FormControlLabel, LinearProgress, Switch } from '@mui/material'
 import Exercise from '../core/exercise';
 import './progress-bar-exercise.scss'
 
@@ -23,6 +23,8 @@ const Solution = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const [finishRequest, setFinishRequest] = useState(false)
+  // toggle for enabling breakpoints
+  const [checked, setChecked] = useState(false)
 
   // reset local states back to default values
   const handleReset = () => {
@@ -48,6 +50,10 @@ const Solution = () => {
   const handleFinishRequest = () => {
     setIsLoading(false)
     setFinishRequest(true)
+  }
+
+  const handleSwitch = (event) => {
+    setChecked(event.target.checked)
   }
 
   const renderProgressBar = () => {
@@ -76,6 +82,7 @@ const Solution = () => {
         <Button variant="outlined" color="secondary" disabled={!isLoading} onClick={() => handleFinishRequest()}>
           Finish Request
         </Button>
+        <FormControlLabel control={<Switch checked={checked} onChange={handleSwitch} />} label="Breakpoints" />
       </Box>
     </div>
   );
