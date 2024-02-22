@@ -6,9 +6,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint --fix ./src",
-    "prettify": "prettier --write ./src"
+    "prettify": "prettier --write ./src",
+    "test": "react-scripts test"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.21.3",
@@ -24,12 +28,12 @@
     "eslint-config-prettier": "9.1.0",
     "prettier": "3.2.4"
   },
-  "eslintConfig": { 
-    "extends": [ 
-      "react-app", 
-      "react-app/jest", 
-      "prettier" 
-    ] 
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "prettier"
+    ]
   },
   "browserslist": {
     "production": [
