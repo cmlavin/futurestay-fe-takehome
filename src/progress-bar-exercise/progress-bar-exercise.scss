@@ -24,28 +24,28 @@ button.MuiButton-outlined {
 }
 
 button.MuiButton-outlinedSecondary {
-  border-color: $red;
-  color: $red;
-  &:hover {
-      background-color: initial;
-      border: 2px solid $red;
-  }
-  &:active {
-      background-color: initial;
-      border: 3px solid $red;
-  }
+    border-color: $red;
+    color: $red;
+    &:hover {
+        background-color: initial;
+        border: 2px solid $red;
+    }
+    &:active {
+        background-color: initial;
+        border: 3px solid $red;
+    }
 }
 
 .MuiLinearProgress-root {
-  background-color: $gray-light!important;
+    background-color: $gray-light!important;
 }
 
 .MuiLinearProgress-bar {
-  background-image: linear-gradient(to right, $sunset, $red)!important;
-  height: 6px!important;
+    background-image: linear-gradient(to right, $sunset, $red)!important;
+    height: 6px!important;
 }
 
 .fade-out {
-  opacity: 0;
-  transition: opacity 3s;
+    opacity: 0;
+    transition: opacity 3s;
 }

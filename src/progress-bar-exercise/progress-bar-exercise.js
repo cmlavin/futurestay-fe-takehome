@@ -75,7 +75,7 @@ const Solution = () => {
         </Button>
         <Button variant="outlined" color="secondary" disabled={!isLoading} onClick={() => handleFinishRequest()}>
           Finish Request
-      </Button>
+        </Button>
       </Box>
     </div>
   );
