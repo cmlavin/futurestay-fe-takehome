@@ -1,5 +1,10 @@
 @import '../shared_styles/typography.scss';
 
+// decided to use Material UI because it saves time vs writing components from scratch
+
+// decided to use Sass with Material UI to maintain consistency across the codebase and
+// to use the existing code in the shared_styles folder
+
 button.MuiButton-outlined {
     border-color: $green;
     border-radius: 25px;
@@ -29,4 +34,13 @@ button.MuiButton-outlinedSecondary {
       background-color: initial;
       border: 3px solid $red;
   }
+}
+
+.MuiLinearProgress-root {
+  background-color: $gray-light!important;
+}
+
+.MuiLinearProgress-bar {
+  background-image: linear-gradient(to right, $sunset, $red)!important;
+  height: 6px!important;
 }
