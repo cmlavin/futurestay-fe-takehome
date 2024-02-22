@@ -1,4 +1,6 @@
 import Exercise from '../core/exercise';
+import { Button } from '@mui/material'
+import './progress-bar-exercise.scss'
 
 const ProgressBarExercise = () => {
   return (
@@ -17,5 +19,14 @@ export default ProgressBarExercise;
 // ----------------------------------------------------------------------------------
 
 const Solution = () => {
-  return <div>Add solution here</div>;
+  return (
+    <div>
+      <Button variant="outlined">
+        Start Request
+      </Button>
+      <Button variant="outlined" color="secondary">
+        Finish Request
+      </Button>
+    </div>
+  );
 };

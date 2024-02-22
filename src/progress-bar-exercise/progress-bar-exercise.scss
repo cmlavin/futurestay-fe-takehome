@@ -1,0 +1,32 @@
+@import '../shared_styles/typography.scss';
+
+button.MuiButton-outlined {
+    border-color: $green;
+    border-radius: 25px;
+    color: $green;
+    font-family: $standard-font;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin: 20px;
+    &:hover {
+        background-color: initial;
+        border: 2px solid $green;
+    }
+    &:active {
+        background-color: initial;
+        border: 3px solid $green;
+    }
+}
+
+button.MuiButton-outlinedSecondary {
+  border-color: $red;
+  color: $red;
+  &:hover {
+      background-color: initial;
+      border: 2px solid $red;
+  }
+  &:active {
+      background-color: initial;
+      border: 3px solid $red;
+  }
+}
