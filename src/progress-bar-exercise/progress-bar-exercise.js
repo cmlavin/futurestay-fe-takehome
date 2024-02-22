@@ -57,7 +57,7 @@ const Solution = () => {
           <Box sx={{ width: "50%" }}>
             <LinearProgress variant="determinate" value={finishRequest ? 100 : progress} />
           </Box>
-          <Box sx={{ marginLeft: "15px" }}>
+          <Box data-testid="progress-bar-label" sx={{ marginLeft: "15px" }}>
             {finishRequest ? "100%" : `${progress.toFixed(0)}%`}
           </Box>
         </Box>
