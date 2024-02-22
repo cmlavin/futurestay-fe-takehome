@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Box, Button, LinearProgress } from '@mui/material'
+import { useState, useEffect } from 'react';
+import { Box, Button, FormControlLabel, LinearProgress, Switch } from '@mui/material'
 import Exercise from '../core/exercise';
 import './progress-bar-exercise.scss'
 
@@ -23,6 +23,28 @@ const Solution = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const [finishRequest, setFinishRequest] = useState(false)
+  // toggle for enabling breakpoints
+  const [checked, setChecked] = useState(false)
+
+  const breakpointsArr = [10, 25, 30, 65, 85]
+
+  // convert breakpoints array into an object
+  const formatBreakpoints = (arr) => {
+    let obj = {}
+    for (let i = 0; i < arr.length - 1; i++) {
+      obj[arr[i]] = arr[i]
+    }
+    return obj
+  }
+
+  const breakpointsObj = formatBreakpoints(breakpointsArr)
+
+  useEffect(() => {
+    // checks to see if breakpoints are enabled and if the progress bar is at a breakpoint
+    if (checked && progress === breakpointsObj[progress]) {
+      setTimeout(() => { console.log('Set 1 second delay') }, 1000)
+    }
+  }, [checked, progress, breakpointsObj])
 
   // reset local states back to default values
   const handleReset = () => {
@@ -39,15 +61,19 @@ const Solution = () => {
     setIsLoading(true)
     setInterval(() => {
       setProgress((prevValue) => {
-        // 90 / 15 = 6% of progress per second
-        return Math.min(prevValue + 6, 90)
+        // increment 5% every half second
+        return Math.min(prevValue + 5, 90)
       })
-    }, 1000)
+    }, 500)
   }
 
   const handleFinishRequest = () => {
     setIsLoading(false)
     setFinishRequest(true)
+  }
+
+  const handleSwitch = (event) => {
+    setChecked(event.target.checked)
   }
 
   const renderProgressBar = () => {
@@ -76,6 +102,7 @@ const Solution = () => {
         <Button variant="outlined" color="secondary" disabled={!isLoading} onClick={() => handleFinishRequest()}>
           Finish Request
         </Button>
+        <FormControlLabel control={<Switch checked={checked} onChange={handleSwitch} />} label="Breakpoints" />
       </Box>
     </div>
   );

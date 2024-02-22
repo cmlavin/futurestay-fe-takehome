@@ -36,6 +36,14 @@ button.MuiButton-outlinedSecondary {
     }
 }
 
+.MuiFormControlLabel-root {
+    margin: 20px!important;
+}
+
+.MuiFormControlLabel-label {
+    font-family: $standard-font!important;
+}
+
 .MuiLinearProgress-root {
     background-color: $gray-light!important;
 }
