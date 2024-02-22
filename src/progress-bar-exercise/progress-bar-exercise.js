@@ -53,7 +53,7 @@ const Solution = () => {
   const renderProgressBar = () => {
     if (isLoading || finishRequest) {
       return (
-        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <Box className={finishRequest ? 'fade-out' : null} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <Box sx={{ width: "50%" }}>
             <LinearProgress variant="determinate" value={finishRequest ? 100 : progress} />
           </Box>

@@ -44,3 +44,8 @@ button.MuiButton-outlinedSecondary {
   background-image: linear-gradient(to right, $sunset, $red)!important;
   height: 6px!important;
 }
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 3s;
+}
